@@ -1,10 +1,6 @@
 
 import os
 
-import site
-
-site.addsitedir("D:\\mytools\\AI4Water")
-
 import numpy as np
 import matplotlib.pyplot as plt
 import torch
@@ -59,12 +55,14 @@ history, results, model = main(args, best_mae_error)
 
 
 fig, ax = plt.subplots()
-ax = plot(history['train_mae'], label="Training", ax=ax, show=False, title="MAE")
-plot(history['val_mae'], label="Validation", ax=ax, xlabel="Epochs")
+ax = plot(history['train_mae'], label="Training", ax=ax, show=False,
+          ax_kws=dict(title="MAE"))
+plot(history['val_mae'], label="Validation", ax=ax, ax_kws=dict(xlabel="Epochs"))
 
 _, ax = plt.subplots()
-ax = plot(history['train_loss'], label="Training", ax=ax, show=False, title="LOSS")
-plot(history['val_loss'], label="Validation", ax=ax, xlabel="Epochs")
+ax = plot(history['train_loss'], label="Training", ax=ax, show=False,
+          ax_kws=dict(title="LOSS"))
+plot(history['val_loss'], label="Validation", ax=ax, ax_kws=dict(xlabel="Epochs"))
 
 prefix = f"{dateandtime_now()}"
 

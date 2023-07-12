@@ -304,7 +304,7 @@ class CIFData(Dataset):
                  target = "35-Pb",
                  max_num_nbr=12, radius=8,
                  dmin=0, step=0.2,
-                 target_fname="Energies(Cr_Hg_Pb_Cd).xlsx",
+                 target_fname="Energies_Cr_Hg_Pb_Cd_.xlsx",
                  random_seed=123):
         self.root_dir = root_dir
         self.target = target
