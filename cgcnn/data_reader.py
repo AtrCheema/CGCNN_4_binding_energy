@@ -8,8 +8,7 @@ import pandas as pd
 from scipy.io import savemat
 from scipy.interpolate import griddata
 np.set_printoptions(suppress=True)
-import site
-site.addsitedir("D:\\mytools\\easy_mpl")
+
 
 
 class CoordsReader:
