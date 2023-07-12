@@ -19,6 +19,8 @@ from cgcnn.data import CIFData
 from cgcnn.data import collate_pool
 from cgcnn.main import main
 
+SEP = os.sep
+
 # %%
 metal = "35-Pb"
 class Args:
@@ -76,7 +78,7 @@ if __name__ == "__main__":
                 df = df.iloc[1:-1, 8:]
 
             df.columns = ["sr_no", "folder_name", "files", "a", "b", "c", "DEads"]
-            self.filenames = self.target + '\\'+ df["folder_name"].astype(float).astype(str) + '\\' + df['files'].astype(str)
+            self.filenames = self.target + f'{SEP}'+ df["folder_name"].astype(float).astype(str) + f'{SEP}' + df['files'].astype(str)
             self.target = df['DEads']
             return np.column_stack([self.filenames, self.target]).tolist()
 
