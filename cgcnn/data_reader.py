@@ -9,7 +9,7 @@ from scipy.io import savemat
 from scipy.interpolate import griddata
 np.set_printoptions(suppress=True)
 
-
+SEP = os.sep
 
 class CoordsReader:
 
@@ -59,7 +59,7 @@ class CoordsReader:
         _filenames = df['cif_file_name']
         _filenames = np.array([fname.replace('_', '-') for fname in _filenames])
         df['Folder_name'] = df['Folder_name'].round(2).astype(str)
-        df['files'] = f"{self.heavy_metal}\\" + df['Folder_name'] + "\\" + _filenames
+        df['files'] = f"{self.heavy_metal}{SEP}" + df['Folder_name'] + f"{SEP}" + _filenames
 
         if cutoff:
             df = df[(df['DEads'] <= cutoff[1]) & (df['DEads'] >= cutoff[0])]
